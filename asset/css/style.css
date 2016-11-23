@@ -1,3 +1,32 @@
 body {
     margin: 0;
 }
+
+#menu {
+	background-image: url('../img/menu_mario/world_1-1.png');
+	position: relative;
+	height: 315px;
+}
+
+#logo img {
+	position: absolute;
+	left: 43%;
+}
+
+#player1 {
+	position: absolute;
+	text-align: center;
+}
+
+#player2{
+	position: absolute;
+	text-align: center;
+}
+
+#player a:first-child {
+	color: red;
+}
+
+#player a:last-child {
+	color: green;
+}
