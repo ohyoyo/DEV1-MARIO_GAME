@@ -6,27 +6,32 @@ body {
 	background-image: url('../img/menu_mario/world_1-1.png');
 	position: relative;
 	height: 315px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
 }
 
 #logo img {
 	position: absolute;
-	left: 43%;
+	left: 40%;
 }
 
-#player1 {
-	position: absolute;
+.player_selected{
+	background: url('../img/menu_mario/carapace_rouge.png') no-repeat left center;
+    background-size: 40px;
+}
+
+
+#menu ul {
 	text-align: center;
-}
-
-#player2{
 	position: absolute;
-	text-align: center;
+	left: 33%;
+	top: 30%;
+	list-style: none;
 }
 
-#player a:first-child {
-	color: red;
+#menu li {
+	font-size: 30px;
+	padding: 20px 40px;
 }
 
-#player a:last-child {
-	color: green;
-}
