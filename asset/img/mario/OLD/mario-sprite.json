@@ -1,0 +1,17 @@
+{"frames": [
+{
+"filename": "mario_run00",
+"frame": {"x":14,"y":10,"w":14,"h":20},
+"rotated": false,
+"trimmed": true,
+"spriteSourceSize": {"x":10,"y":300,"w":14,"h":20},
+"sourceSize": {"w":14,"h":20}
+},
+{
+"filename": "mario_run01",
+"frame": {"x":31,"y":10,"w":15,"h":19},
+"rotated": false,
+"trimmed": true,
+"spriteSourceSize": {"x":10,"y":300,"w":15,"h":19},
+"sourceSize": {"w":15,"h":19}
+}]}
