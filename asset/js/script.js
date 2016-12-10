@@ -2,6 +2,10 @@
 //flèche bas = 40
 //entréé = 13
 
+var ply = function(p){
+		
+}
+
 function gotogame(){
 	location.href='http://www.google.com';
 }
@@ -28,6 +32,7 @@ function select(k) {
 document.addEventListener('keydown', select);
 
 
+
 function hover(){
 	var id = this.getAttribute('id');
 
@@ -46,3 +51,19 @@ var lis = document.getElementsByTagName('li');
 for(var i=0; i<lis.length; i++){
 	lis[i].addEventListener('mouseover', hover);
 }
+
+var t = document.getElementsByClassName('thx')[0];
+
+var thanks = function(){
+	var _thx = document.getElementById('thx'),
+		_thx2= document.getElementById('thx2');
+		_ply = document.getElementsByTagName('ul')[0];
+
+			_thx.style.display = "none";
+			_thx2.style.display= "none";
+			_ply.style.display = "block";
+}
+
+var time = setTimeout(thanks,5000);
+
+
