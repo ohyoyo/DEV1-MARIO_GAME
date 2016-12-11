@@ -11,9 +11,10 @@
 <body>
     <div id="container">
         <div id="logo"></div>
-        <div id="loading"></div>
+        <div id="tiles">
+            <div id="loading"></div>
+        </div>
         <div id="menu">
-
             <ul>
                 <li>
                     <a class="player" id="player_1" href="javascript:loadgame(1);">1 player</a>
@@ -28,6 +29,20 @@
 
         </div>
     </div>
+    <div id="main">
+        <div class="controler" id="audio">
+            <audio id="son" autoplay>
+                <source src="asset/img/son/son-welcome.mp4" type="audio/mp3">
+            </audio>
+        </div>
+        <a href="https://github.com/ohyoyo/DEV1-MARIO_GAME" target="_blank">
+            <div class="controler" id="download"></div>
+        </a>
+        
+        <div class="controler" id="play"></div>
+        <div class="controler" id="replay"></div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script src="asset/js/phaser.min.js"></script>
