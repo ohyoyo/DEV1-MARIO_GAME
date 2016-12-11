@@ -20,31 +20,45 @@ body {
 }
 
 #main .controler#audio {
-    background-image: url('../img/son/ic_volume_up_black_24dp_2x.png');
+    background-image: url('../img/controler/ic_volume_up_black_24dp_2x.png');
     background-size: 100%;
     width: 30px;
     height: 30px;
 }
 
 #main .controler#download {
-    background-image: url('../img/son/ic_cloud_download_black_24dp_2x.png');
+    background-image: url('../img/controler/ic_cloud_download_black_24dp_2x.png');
     background-size: 100%;
     width: 30px;
     height: 30px;
 }
 
 #main .controler#play {
-    background-image: url('../img/son/ic_play_arrow_black_24dp_2x.png');
+    background-image: url('../img/controler/ic_play_arrow_black_24dp_2x.png');
     background-size: 100%;
     width: 30px;
     height: 30px;
+    float: right;
 }
 
 #main .controler#replay {
-    background-image: url('../img/son/ic_replay_black_24dp_2x.png');
+    background-image: url('../img/controler/ic_replay_black_24dp_2x.png');
     background-size: 100%;
     width: 30px;
     height: 30px;
+    float: right;
+}
+
+#main .controler#replay:hover {
+    -webkit-animation: replay 0.5s ease-in;
+}
+
+#main .controler#stop {
+    background-image: url('../img/controler/ic_supervisor_account_black_24dp_2x.png');
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    float: right;
 }
 
 #container {
@@ -56,7 +70,7 @@ body {
 }
 
 #container #logo { 
-    background-image: url('../img/menu_mario/nsmb.png'), url('../img/maps/bg-grassland.png');
+    background-image: url('../img/menu_mario/jumpingmariobros.png'), url('../img/maps/bg-grassland.png');
     background-repeat: no-repeat, no-repeat;
     background-size: 202px 102px, 300px 140px;
     background-position: center 10px, center;
@@ -76,6 +90,7 @@ body {
     background-image: url('../img/mario/mario.gif');
     width: 14px;
     height: 22px;
+    top: -20px;
     -webkit-animation: loading 2.5s infinite linear;
     animation: loading 2.5s infinite linear;
 }

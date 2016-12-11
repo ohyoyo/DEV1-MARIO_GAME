@@ -50,11 +50,11 @@ function loadgame (nb) {
         this.ground = this.game.add.tileSprite(0, 468, this.game.width, 32, 'ground');
         //this.ground.autoScroll(-150, 0);
 
-        this.mario = this.add.sprite(245, 200, 'mario');
+        this.mario = this.add.sprite(220, 450, 'mario');
         this.mario.animations.add('run');
         this.mario.scale.x = -1;
 
-        this.luigi = this.add.sprite(45, 200, 'luigi');
+        this.luigi = this.add.sprite(45, 450, 'luigi');
         this.luigi.animations.add('run');
         if(player === 1)
             this.luigi.visible = false;
@@ -94,8 +94,27 @@ function loadgame (nb) {
     }
 
     function update() {
+        if(pause === 0) {
+            game.physics.arcade.isPaused = true
+        }
+        else if(pause === 1) {
+            game.physics.arcade.isPaused = false;
+        }
+        
+        $('#replay').click(function() {
+            game.state.restart();
+            $('#game').show('slow');
+        });
+        
+        $('.player').click(function() {
+            game.state.restart();
+        })
+        
+        $('.stop').click(function() {
+            game.destroy();
+        })
         this.physics.arcade.collide(this.mario, [this.ground, this.obstacles, this.goomba, this.luigi]);
-        this.physics.arcade.collide(this.luigi, [this.ground, this.obstacles, this.goomba, this.mario]);
+         this.physics.arcade.collide(this.luigi, [this.ground, this.obstacles, this.goomba, this.mario]);
         this.physics.arcade.collide(this.obstacles, [this.obstacles]);
 
         if (this.jumpButton.isDown && (this.mario.body.touching.down) || this.jumpButton2.isDown && (this.mario.body.touching.down)) {
@@ -142,7 +161,7 @@ function loadgame (nb) {
     }
 
     function createObstacles() {
-        this.obstacles.createMultiple(2, 'obstacle', [0, 1]);
+        this.obstacles.createMultiple(1, 'obstacle', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         this.obstacles.setAll('body.allowGravity', false);
         this.obstacles.setAll('body.immovable', true);
     }
@@ -171,7 +190,30 @@ function loadgame (nb) {
         if (obs) {
             obs.reset();
             obs.right = this.world.bounds.right;
-            obs.bottom = y_origin;
+            for(i=0;i<=10;i++){
+                if(i == 0)
+                    obs.bottom = y_origin-i;
+                else if(i == 1)
+                    obs.bottom = y_origin - 30;
+                else if(i == 3)
+                    obs.bottom = y_origin - 60;
+                else if(i == 3)
+                    obs.bottom = y_origin - 90;
+                else if(i == 4)
+                    obs.bottom = y_origin - 120;
+                else if(i == 5)
+                    obs.bottom = y_origin - 150;
+                else if(i == 6)
+                    obs.bottom = y_origin - 180;
+                else if(i == 7)
+                    obs.bottom = y_origin - 210;
+                else if(i == 8)
+                    obs.bottom = y_origin - 240;
+                else if(i == 9)
+                    obs.bottom = y_origin - 270;
+                else if(i == 10)
+                    obs.bottom = y_origin - 300;
+            }
             obs.body.velocity.x = -200;
             o = 100;
 
