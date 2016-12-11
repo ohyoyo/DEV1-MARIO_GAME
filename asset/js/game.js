@@ -5,7 +5,6 @@ function loadgame (nb) {
             preload: preload,
             create: create,
             update: update,
-            shutdown: shutdown,
             /* load obstacles */
             createObstacles: createObstacles,
             nextObstacle: nextObstacle,
@@ -25,15 +24,24 @@ function loadgame (nb) {
         };
     
     function preload() {
-        this.load.image('background', 'asset/img/tiles/bg-beach-ocean.png');
+        randomBG = Math.floor((Math.random() * 4) + 1);
+        if(randomBG === 1)
+            this.load.image('background', 'asset/img/tiles/bg-1.png');
+        else  if(randomBG === 2)
+            this.load.image('background', 'asset/img/tiles/bg-3.png');
+        else if(randomBG === 3)
+            this.load.image('background', 'asset/img/tiles/bg-2.png');
+        else
+            this.load.image('background', 'asset/img/tiles/bg-1.png');
         this.load.image('ground', 'asset/img/tiles/tiles.png');
-        this.load.spritesheet('obstacle', 'asset/img/tiles/tiles.png', 64, 32);
+        this.load.spritesheet('obstacle', 'asset/img/tiles/tiles_b.png', 95, 33);
         this.load.spritesheet('mario', 'asset/img/mario/mario.png', 14, 19, 2);
         this.load.spritesheet('luigi', 'asset/img/mario/luigi.png', 14, 19, 2);
         this.load.spritesheet('goomba', 'asset/img/mario/goomba.gif', 17, 18);
     }
 
     function create() {
+        this.stage.backgroundColor = 0x1a9efb;
         this.physics.arcade.gravity.y = 1000;
         this.background = this.game.add.tileSprite(0, 0, this.game.width, 624, 'background');
         this.background.tileScale.set(this.background.height / this.background.texture.frame.height);
@@ -133,12 +141,8 @@ function loadgame (nb) {
 
     }
 
-    function shutdown() {
-
-    }
-
     function createObstacles() {
-        this.obstacles.createMultiple(1, 'obstacle', [0, 1, 2, 3, 4, 5, 6]);
+        this.obstacles.createMultiple(2, 'obstacle', [0, 1]);
         this.obstacles.setAll('body.allowGravity', false);
         this.obstacles.setAll('body.immovable', true);
     }
@@ -180,8 +184,7 @@ function loadgame (nb) {
                 y_origin = y_origin - 30;
             else if(obs.bottom >= 40)
                 y_origin = y_origin + 30;
-
-            console.log(obs.lenght);
+            
             //obs.right = this.world.bounds.right;
             //obs.bottom = this.ground.top;
            // obs.body.velocity.x = -150;
