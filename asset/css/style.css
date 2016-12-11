@@ -2,11 +2,61 @@ body {
     margin: 0 auto;
 }
 
-canvas {
-    margin: 0 auto;
-    margin-top: 150px;
+#container {
+    border: 2px solid black;
     width: 300px;
-    height: 500px;
-    display: block;
-    text-align: center;
+	margin: auto;
+    margin-top: 150px;
+}
+
+#container #logo {
+    background-image: url('../img/menu_mario/nsmb.png');
+    background-repeat: no-repeat;
+    width: 202px;
+    height: 102px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+#container #loading {
+    position: relative;
+    background-image: url('../img/mario/mario.gif');
+    width: 14px;
+    height: 22px;
+    -webkit-animation: loading 2.5s infinite linear;
+    animation: loading 2.5s infinite linear;
+}
+
+#container #menu {
+	text-align: center;
+	display: block;
+}
+
+#container #menu ul {
+    list-style-type: none;
+}
+
+#container #menu ul li {
+	padding: 20px 0px;
+    
+}
+
+#container #menu ul li a {
+	font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-family: Arial;
+}
+
+#container #menu ul li a#player_1:hover {
+    color: red;
+}
+
+#container #menu ul li a#player_2:hover {
+    color: green;
+}
+
+#container #game {
+    margin: auto;
 }

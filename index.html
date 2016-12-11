@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <title>SUPER MARIO BOSS</title>
     
+    <link rel="stylesheet" href="asset/css/reset.css">
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="asset/css/animation.css">
-    <style>
-        canvas {
-            border: 2px solid black;
-        }
-    </style>
 </head>
 <body>
+    <div id="container">
+        <div id="logo"></div>
+        <div id="loading"></div>
+        <div id="menu">
+
+            <ul>
+                <li>
+                    <a class="player" id="player_1" href="javascript:loadgame(1);">1 player</a>
+                </li>
+                <li>
+                    <a class="player" id="player_2" href="javascript:loadgame(2);">2 player</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="game" style="display: none !important;">
+
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script src="asset/js/phaser.min.js"></script>

@@ -1,0 +1,26 @@
+@-webkit-keyframes loading {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes player1hover {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 40%;
+    }
+}
+
+@-webkit-keyframes player2hover {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 40%;
+    }
+}
